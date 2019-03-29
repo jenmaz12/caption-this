@@ -8,11 +8,8 @@ const API_PORT = 3001;
 const app = express();
 const router = express.Router();
 
-// this is our MongoDB database
-const dbRoute = "mongodb://localhost/captionthis";
-
 // connects our back end code with the database
-mongoose.connect(process.env.MONGODB_URI || dbRoute,
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/captionthis",
   { useCreateIndex: true, 
     useNewUrlParser: true }
 );

@@ -2,7 +2,7 @@
   "name": "caption-this",
   "version": "1.0.0",
   "dependencies": {
-    "concurrently":"^4.1.0"
+    "concurrently": "^4.1.0"
   },
   "scripts": {
     "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""

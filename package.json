@@ -2,10 +2,16 @@
   "name": "caption-this",
   "version": "1.0.0",
   "dependencies": {
-    "concurrently": "^4.1.0"
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.20",
+    "morgan": "^1.9.1",
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
-    "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
+    "start": "concurrently \"node server.js\" \"cd client && npm start\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -18,7 +24,12 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jenmaz12/caption-this.git"

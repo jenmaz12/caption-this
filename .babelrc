@@ -1,0 +1,5 @@
+//This file just configures babel so that it works with react
+
+{
+    "presets":["@babel/preset-env", "@babel/preset-react"]
+}

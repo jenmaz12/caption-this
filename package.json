@@ -5,6 +5,7 @@
     "concurrently": "^4.1.0"
   },
   "scripts": {
+    "build": "webpack --mode production",
     "start": "concurrently \"node server.js\" \"cd client && npm start\""
   },
   "eslintConfig": {
@@ -18,7 +19,14 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jenmaz12/caption-this.git"

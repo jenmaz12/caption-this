@@ -2,14 +2,15 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const Data = require("./data");
+const Data = require("./models/data");
 
 const API_PORT = 3001;
 const app = express();
 const router = express.Router();
 
 // connects our back end code with the database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/captionthis",
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/captionthis",
   { useCreateIndex: true, 
     useNewUrlParser: true }
 );

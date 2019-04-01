@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default {
   // Gets books from the Google API
-  getDataFromDb = (q) => {
+  getDataFromDb: (q) => {
     return axios.get("/api/database", { params: { q: "caption:" + q } });
   },
   // Gets all saved books

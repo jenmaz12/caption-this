@@ -1,10 +1,10 @@
-//This file serves as the middle point between the server and front end?
+//This file serves as the middle point between the server and front end
 
 import axios from "axios";
 
 export default {
   // Gets books from the Google API
-  getDataFromDb = (q) => {
+  getDataFromDb: (q) => {
     return axios.get("/api/database", { params: { q: "caption:" + q } });
   },
   // Gets all saved books
@@ -20,12 +20,14 @@ export default {
       return axios.put("/api/images/" + id);
   },
 
-  // Deletes the saved book with the given id
+  // Deletes the caption with the given id
   deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/image/" + id);
   },
-  // Saves an book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  // Saves a caption to the database
+  // This is beyond the MVP. Currently users can not add an image.
+  // We are only adding captions via the addCaption function above.
+  saveBook: function(captionData) {
+    return axios.post("/api/image", captionData);
   }
 };

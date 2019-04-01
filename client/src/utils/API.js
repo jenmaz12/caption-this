@@ -8,9 +8,18 @@ export default {
     return axios.get("/api/database", { params: { q: "caption:" + q } });
   },
   // Gets all saved books
-  getSavedBooks: function() {
-    return axios.get("/api/books");
+  //POST DOES NOT WORK RIGHT NOW.  NOT PART OF MVP
+//   postSavedBooks: function(idToBeAdded, caption) {
+//     return axios.post("http://localhost:3001/api/putData", {
+//       id: idToBeAdded,
+//       caption: caption
+//     });
+
+  //Updates the image's captions
+  addCaption: function(id) {
+      return axios.put("/api/images/" + id);
   },
+
   // Deletes the saved book with the given id
   deleteBook: function(id) {
     return axios.delete("/api/books/" + id);

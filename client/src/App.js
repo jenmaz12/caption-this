@@ -40,11 +40,6 @@ class App extends Component {
   // for our back end, we use the object id assigned by MongoDB to modify 
   // data base entries
 
-  // Changed from fetch functions to axios calls.  This 
-  getDataFromDb = (q) => {
-    return axios.get("/api/database", { params: { q: "caption:" + q } });
-  };
-
 
   // our put method that uses our backend api
   // to create new query into our data base

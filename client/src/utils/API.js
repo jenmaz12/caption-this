@@ -3,8 +3,9 @@
 import axios from 'axios';
 
 export default {
-  getDataFromDb: q => {
-    return axios.get('/api/database', { params: { q: 'caption:' + q } });
+  // Gets images from the Google API
+  getDataFromDb: () => {
+    return axios.get('/api/image');
   },
   // Gets all saved books
   //POST DOES NOT WORK RIGHT NOW.  NOT PART OF MVP

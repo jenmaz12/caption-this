@@ -4,6 +4,7 @@ function Modal({ src, imgID }) {
   return (
     <div
       className='modal fade bd-example-modal-lg'
+      id={'addCaptionModal' + imgID}
       tabindex='-1'
       role='dialog'
       aria-labelledby='myLargeModalLabel'

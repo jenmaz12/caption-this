@@ -11,7 +11,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path='/' component={Landing} />
-          <Route exact path='/images' component={Images} />
+          <Route exact path='/image' component={Images} />
         </Switch>
       </div>
     </Router>

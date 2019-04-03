@@ -2,7 +2,8 @@ const router = require("express").Router();
 const imageController = require("../../controllers/imageController");
 
 // Matches with "/api/images.js"
-router.route("/")
+router
+  .route("/")
   .get(imageController.findAll)
   .post(imageController.create);
 

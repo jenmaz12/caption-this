@@ -2,11 +2,15 @@ const db = require("../models");
 
 
 module.exports = {
-    findAll: function(req, res) {
-      db.Data.find(req.query)
-        .then(dbImage => res.json(dbImage))
-        .catch(err => res.status(422).json(err));
+    findAll: function() {
+      db.Data.find( {} );
     },
+
+    // findAll: function(res) {
+    //   db.Data.find()
+    //     .then(dbImage => res.json(dbImage))
+    //     .catch(err => res.status(422).json(err));
+    // },
     findById: function(req, res) {
       db.Data.findById(req.params.id)
         .then(dbImage => res.json(dbImage))

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default {
   // Gets images from the Google API
-  getDataFromDb: () => {
+  getDataFromDb: function() {
     return axios.get('/api/image');
   },
   // Gets all saved books

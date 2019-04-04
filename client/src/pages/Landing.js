@@ -6,11 +6,11 @@ import '../sass/colors.scss';
 // import API from '../utils/API';
 // import { Col, Row, Container } from '../components/Grid';
 
-const divStyle = {
-  'font-family': "'Quattrocento', serif",
-  'font-weight': 'bold',
-  color: '#061323',
-};
+// const divStyle = {
+//   'font-family': "'Quattrocento', serif",
+//   'font-weight': 'bold',
+//   color: '#061323',
+// };
 
 class Home extends Component {
   state = {
@@ -34,29 +34,21 @@ class Home extends Component {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col-md-12'>
-            <h3 style={divStyle}> Log-in/Sign up</h3>
-          </div>
-          <div className='col-md-12'>
-            <Form
-              handleInputChange={this.handleInputChange}
-              handleFormSubmit={this.handleFormSubmit}
-              userName={this.state.userName}
-              password={this.state.password}
-            />
-          </div>
-          <div className='col-md-12'>
-            <Title>
-              <h1 className='text-center'>
-                <strong>Caption This!</strong>
-              </h1>
-              <h2 className='text-center'>
-                Caption This! is a fun, interactive application in which users
-                can express their creativity and create and share captions for
-                photos.
-              </h2>
-            </Title>
-          </div>
+          <Title>
+            <h1 className='text-center'>
+              <strong>Caption This!</strong>
+            </h1>
+            <h2 className='text-center'>
+              Caption This! is a fun, interactive application in which users can
+              express their creativity and create and share captions for photos.
+            </h2>
+          </Title>
+          <Form
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+            userName={this.state.userName}
+            password={this.state.password}
+          />
         </div>
       </div>
     );

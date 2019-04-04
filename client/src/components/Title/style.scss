@@ -1,0 +1,9 @@
+@import '../../sass/colors.scss';
+@import '../../sass/fonts.scss';
+
+.jumbotron {
+  font-family: $bodyFont;
+  font-weight: bold;
+  color: $bodyTextColor;
+  background-color: $lightBackground;
+}

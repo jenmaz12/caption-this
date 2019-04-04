@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import Title from '../components/Title';
 import Form from '../components/Form';
+import '../sass/colors.scss';
 // import Footer from '../components/Footer';
 // import API from '../utils/API';
 // import { Col, Row, Container } from '../components/Grid';
+
+const divStyle = {
+  'font-family': "'Quattrocento', serif",
+  'font-weight': 'bold',
+  color: '#061323',
+};
 
 class Home extends Component {
   state = {
@@ -28,7 +35,7 @@ class Home extends Component {
       <div className='container'>
         <div className='row'>
           <div className='col-md-12'>
-            <h1> Log-in/Sign up</h1>
+            <h3 style={divStyle}> Log-in/Sign up</h3>
           </div>
           <div className='col-md-12'>
             <Form

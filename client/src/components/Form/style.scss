@@ -1,0 +1,22 @@
+@import '../../sass/fonts.scss';
+@import '../../sass/colors.scss';
+
+form {
+  font-family: $bodyFont;
+}
+
+.btn {
+  background-color: $medBlue;
+  color: $lightBackground;
+  font-weight: bold;
+  &:hover {
+    background-color: $bodyTextColor;
+  }
+}
+
+input {
+  color: $bodyTextColor !important;
+}
+::placeholder {
+  color: $accentColor !important;
+}

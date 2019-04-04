@@ -3,11 +3,10 @@
 import axios from 'axios';
 
 export default {
-  // Gets images from the Google API
+  // Gets images from the database
   getDataFromDb: () => {
     return axios.get('/api/image');
   },
-  // Gets all saved books
   //POST DOES NOT WORK RIGHT NOW.  NOT PART OF MVP
   //   postSavedBooks: function(idToBeAdded, caption) {
   //     return axios.post("http://localhost:3001/api/putData", {

@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
 import ImageCards from '../components/ImageCards';
+import Modal from '../components/Modal';
 
 class Images extends Component {
-  state = { results: [] };
+  state = {
+    results: [
+      // {
+      //   _id: '2',
+      //   src: 'https://i.imgflip.com/tgniv.jpg',
+      //   captions: [{ body: 'test', date: new Date(Date.now) }],
+      // },
+    ],
+  };
 
   componentDidMount() {
     this.getImages();
@@ -11,11 +20,12 @@ class Images extends Component {
 
   getImages = () => {
     API.getDataFromDb()
-      .then(res =>
+      .then(res => {
+        console.log(res);
         this.setState({
           results: res.data,
-        })
-      )
+        });
+      })
       .catch(err => console.log(err));
   };
 
@@ -26,9 +36,12 @@ class Images extends Component {
           {this.state.results.map(image => (
             <ImageCards
               src={image.src}
-              id={image.id}
+              id={image._id}
               recentCaption={image.captions}
             />
+          ))}
+          {this.state.results.map(image => (
+            <Modal src={image.src} imgID={image._id} />
           ))}
         </div>
       </div>

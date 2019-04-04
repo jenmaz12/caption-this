@@ -1,7 +1,11 @@
 import React from 'react';
-
+import './style.scss';
 function Title({ children }) {
-  return <div className='jumbotron mt-4'>{children}</div>;
+  return (
+    <div className='col-md-5 mr-1' id='titleDescription'>
+      {children}
+    </div>
+  );
 }
 
 export default Title;

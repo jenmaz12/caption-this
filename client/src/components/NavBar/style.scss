@@ -1,0 +1,22 @@
+@import '../../sass/colors.scss';
+@import '../../sass/fonts.scss';
+
+.navbar {
+  border-radius: 0;
+  background-color: $lightBackground !important;
+}
+
+.nav-link {
+  color: $bodyTextColor !important;
+  text-decoration: none;
+  font-family: $bodyFont;
+  font-weight: bold;
+}
+
+.active {
+  color: $accentColor !important;
+}
+
+#navLogo {
+  width: 150px;
+}

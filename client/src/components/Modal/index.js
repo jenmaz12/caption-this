@@ -4,6 +4,7 @@ function Modal({ src, imgID }) {
   return (
     <div
       className='modal fade bd-example-modal-lg'
+      id={'addCaptionModal' + imgID}
       tabindex='-1'
       role='dialog'
       aria-labelledby='myLargeModalLabel'
@@ -22,6 +23,9 @@ function Modal({ src, imgID }) {
                 maxLength='280'
               />
             </div>
+            <button type='submit' class='btn btn-primary'>
+              Submit
+            </button>
           </form>
         </div>
       </div>

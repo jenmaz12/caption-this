@@ -29,12 +29,10 @@ class Images extends Component {
   };
 
   componentDidMount() {
-    console.log('componentDidMount in Images.js');
     this.getImages();
   }
 
   getImages = () => {
-    console.log('getImages in Images.js');
     API.getBooks()
       .then(res => {
         this.setState({
@@ -49,8 +47,6 @@ class Images extends Component {
       <div className='container'>
         <div className='row'>
           {this.state.results.map(image => (
-<<<<<<< HEAD
-            // <Link to={"/images/" + image._id}>   This is the original line from the class example
             <Link to={"/images/"}>
               <ImageCards
                 key={image._id}
@@ -62,17 +58,6 @@ class Images extends Component {
           ))}
           {this.state.results.map(image => (
             <Modal src={image.src} imgID={image._id} key={image._id}/>
-=======
-            <ImageCards
-              key={image._id}
-              src={image.src}
-              id={image._id}
-              recentCaption={image.captions}
-            />
-          ))}
-          {this.state.results.map(image => (
-            <Modal src={image.src} imgID={image._id} key={image._id} />
->>>>>>> master
           ))}
         </div>
       </div>
@@ -81,3 +66,6 @@ class Images extends Component {
 }
 
 export default Images;
+
+
+// <Link to={"/images/" + image._id}>   This is the original line from the class example

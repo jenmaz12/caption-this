@@ -33,16 +33,8 @@ class Home extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='row'>
-          <Title>
-            <h1 className='text-center'>
-              <strong>Caption This!</strong>
-            </h1>
-            <h2 className='text-center'>
-              Caption This! is a fun, interactive application in which users can
-              express their creativity and create and share captions for photos.
-            </h2>
-          </Title>
+        <div className='row justify-content-center'>
+          <Title />
           <Form
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}

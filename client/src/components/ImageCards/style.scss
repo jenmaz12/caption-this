@@ -1,0 +1,27 @@
+@import '../../sass/colors.scss';
+@import '../../sass/fonts.scss';
+
+.card {
+  width: 280px;
+  background-color: $lightBackground;
+  box-shadow: 5px 5px 3px grey;
+}
+
+.thumbnail {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.thumbnail .cardImage {
+  max-height: 150px;
+}
+
+.most-recent-caption {
+  text-decoration: none;
+  font-family: $bodyFont;
+  color: $bodyTextColor;
+  font-size: 1.5em;
+  font-weight: bold;
+}

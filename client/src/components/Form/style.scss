@@ -11,10 +11,14 @@ form {
 }
 
 #formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: $bodyFont;
   background-color: $lightBackground;
   padding: 20px;
   text-align: center;
+  height: 80vh;
 }
 
 h3 {
@@ -35,4 +39,10 @@ input {
 }
 ::placeholder {
   color: $accentColor !important;
+}
+
+@media screen and (max-width: 767px) {
+  #formContainer {
+    height: auto;
+  }
 }

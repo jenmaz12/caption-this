@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import API from '../utils/API';
 import ImageCards from '../components/ImageCards';
 import Modal from '../components/Modal';
+import { Link } from "react-router-dom";
+
 
 class Images extends Component {
   state = {
@@ -31,9 +33,8 @@ class Images extends Component {
   }
 
   getImages = () => {
-    API.getDataFromDb()
+    API.getBooks()
       .then(res => {
-        console.log(res);
         this.setState({
           results: res.data,
         });
@@ -46,15 +47,17 @@ class Images extends Component {
       <div className='container'>
         <div className='row'>
           {this.state.results.map(image => (
-            <ImageCards
-              key={image._id}
-              src={image.src}
-              id={image._id}
-              recentCaption={image.captions}
-            />
+            <Link to={"/images/"}>
+              <ImageCards
+                key={image._id}
+                src={image.src}
+                id={image._id}
+                recentCaption={image.captions}
+              />
+            </Link>
           ))}
           {this.state.results.map(image => (
-            <Modal src={image.src} imgID={image._id} key={image._id} />
+            <Modal src={image.src} imgID={image._id} key={image._id}/>
           ))}
         </div>
       </div>
@@ -63,3 +66,6 @@ class Images extends Component {
 }
 
 export default Images;
+
+
+// <Link to={"/images/" + image._id}>   This is the original line from the class example

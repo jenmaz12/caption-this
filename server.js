@@ -2,7 +2,7 @@ const express = require('express');
 // const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const seeds = require('./scripts/seedDB');
+// const seeds = require('./scripts/seedDB'); Don't need this here.
 const routes = require('./routes');
 const app = express();
 const API_PORT = process.env.PORT || 3001;
@@ -22,8 +22,8 @@ app.use(routes);
 
 // connects our back end code with the database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/captionthis', {
-  useCreateIndex: true,
-  useNewUrlParser: true,
+  // useCreateIndex: true,
+  // useNewUrlParser: true,
 });
 
 let db = mongoose.connection;
@@ -34,4 +34,6 @@ db.once('open', () => console.log('connected to the database'));
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // launch our backend into a port
-app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
+app.listen(API_PORT, function() {
+  console.log(`🌎  ==> LISTENING ON PORT ${API_PORT}`);
+});

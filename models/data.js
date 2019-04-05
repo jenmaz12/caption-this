@@ -9,5 +9,6 @@ const DataSchema = new Schema({
   captions: [{ body: String, date: Date }],
 });
 
+const Data = mongoose.model('Data', DataSchema);
 // export the new Schema so we could modify it using Node.js
-module.exports = mongoose.model('Data', DataSchema);
+module.exports = Data;

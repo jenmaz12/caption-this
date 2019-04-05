@@ -1,0 +1,23 @@
+@import '../../sass/colors.scss';
+@import '../../sass/fonts.scss';
+
+.container {
+  min-height: 100%;
+}
+
+#titleDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $bodyFont;
+  font-weight: bold;
+  color: $bodyTextColor;
+  background-color: $lightBackground;
+  height: 80vh;
+}
+
+@media screen and (max-width: 767px) {
+  #titleDescription {
+    height: auto;
+  }
+}

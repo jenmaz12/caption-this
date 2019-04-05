@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './style.scss';
+import logo from './logo.png';
 
 class Nav extends Component {
   state = {
@@ -33,9 +34,9 @@ class Nav extends Component {
   render() {
     return (
       <nav className='navbar navbar-expand-lg navbar-light bg-light mb-2'>
-        <Link className='navbar-brand' to='/'>
-          Caption This!
-        </Link>
+        <a className='navbar-brand' href='/'>
+          <img src={logo} alt='Caption This Logo' id='navLogo' />
+        </a>
         <button
           onClick={this.toggleNav}
           className='navbar-toggler'

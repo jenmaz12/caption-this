@@ -1,17 +1,17 @@
-const router = require("express").Router();
-const imageController = require("../../controllers/imageController");
+const router = require('express').Router();
+const imageController = require('../../controllers/imageController');
 
-// Matches with "/api/images.js"
-router.route("/")
+// Matches with "/api/image"
+router
+  .route('/image')
   .get(imageController.findAll)
   .post(imageController.create);
 
 // Matches with "/api/books/:id"
 router
-  .route("/:id")
+  .route('/:id')
   .get(imageController.findById)
   .put(imageController.update)
   .delete(imageController.remove);
 
 module.exports = router;
-

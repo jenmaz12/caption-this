@@ -1,27 +1,32 @@
 import React from 'react';
+import './style.scss';
 
 function Modal({ src, imgID }) {
   return (
     <div
       className='modal fade bd-example-modal-lg'
-      tabindex='-1'
+      id={'addCaptionModal' + imgID}
+      tabIndex='-1'
       role='dialog'
       aria-labelledby='myLargeModalLabel'
       aria-hidden='true'
     >
       <div className='modal-dialog modal-lg modal-dialog-centered'>
         <div className='modal-content'>
-          <img src={src} alt={imgID} />
+          <img className='modalImage img-responsive' src={src} alt={imgID} />
           <form>
             <div className='form-group'>
-              <label for='addCaption'>Add a Caption to this Image!</label>
+              <label htmlFor='addCaption'>Add a Caption to this Image!</label>
               <textarea
-                class='form-control'
+                className='form-control'
                 id='addCaption'
                 rows='3'
                 maxLength='280'
               />
             </div>
+            <button type='submit' className='btn btn-primary modalBtn'>
+              Submit
+            </button>
           </form>
         </div>
       </div>

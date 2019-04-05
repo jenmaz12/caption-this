@@ -1,0 +1,48 @@
+@import '../../sass/fonts.scss';
+@import '../../sass/colors.scss';
+
+form {
+  font-family: $bodyFont;
+  align-items: center;
+}
+
+.form-row {
+  justify-content: center;
+}
+
+#formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $bodyFont;
+  background-color: $lightBackground;
+  padding: 20px;
+  text-align: center;
+  height: 80vh;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.btn {
+  background-color: $medBlue;
+  color: $lightBackground;
+  font-weight: bold;
+  &:hover {
+    background-color: $bodyTextColor;
+  }
+}
+
+input {
+  color: $bodyTextColor !important;
+}
+::placeholder {
+  color: $accentColor !important;
+}
+
+@media screen and (max-width: 767px) {
+  #formContainer {
+    height: auto;
+  }
+}

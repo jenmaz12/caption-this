@@ -3,7 +3,7 @@ const imageController = require('../../controllers/imageController');
 
 // Matches with "/api/image"
 router
-  .route('/image')
+  .route('/api/image')
   .get(imageController.findAll)
   .post(imageController.create);
 

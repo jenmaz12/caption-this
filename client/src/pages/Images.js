@@ -15,10 +15,12 @@ class Images extends Component {
   };
 
   componentDidMount() {
+    console.log('componentDidMount in Images.js');
     this.getImages();
   }
 
   getImages = () => {
+    console.log('getImages in Images.js');
     API.getDataFromDb()
       .then(res => {
         console.log(res);

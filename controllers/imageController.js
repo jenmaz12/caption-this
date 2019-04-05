@@ -2,6 +2,7 @@ const db = require('../models');
 
 module.exports = {
   findAll: function(req, res) {
+    console.log('imageController.js');
     db.Data.find({ src: 'http://test.com' }, function(err, images) {
       if (err) console.log(err);
       else {

@@ -5,7 +5,14 @@ import axios from 'axios';
 export default {
   // Gets images from the database
   getDataFromDb: () => {
-    return axios.get('/api/image');
+    console.log('API');
+    return axios.get('/api/image')
+      // .then(function (response) {
+      //   console.log(response);
+      //   })
+      // .catch(function (error) {
+      //   console.log(error);
+      // });
   },
   //POST DOES NOT WORK RIGHT NOW.  NOT PART OF MVP
   //   postSavedBooks: function(idToBeAdded, caption) {

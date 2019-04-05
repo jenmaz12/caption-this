@@ -1,10 +1,14 @@
 import React from 'react';
+import './style.scss';
 
 function ImageCard({ src, id, recentCaption }) {
   return (
     <a data-toggle='modal' href={'#addCaptionModal' + id}>
       <div className='card'>
-        <img src={src} className='card-img-top' alt={id} />
+        <div className='thumbnail'>
+          <img src={src} alt={id} className='cardImage' />
+        </div>
+
         <div className='card-body'>
           <p className='card-text most-recent-caption'>
             {recentCaption[0].body}

@@ -6,8 +6,7 @@ const router = require('express').Router();
 const apiRoutes = require('./api/images');
 
 // API Routes
-debugger;
-router.use('/image', apiRoutes);
+router.use('/api', apiRoutes);
 
 // If no API routes are hit, send the React app
 router.use((req, res) =>

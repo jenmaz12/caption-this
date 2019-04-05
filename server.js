@@ -2,10 +2,10 @@ const express = require('express');
 // const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const seeds = require('./scripts/seedDB');
+// const seeds = require('./scripts/seedDB');
 const routes = require('./routes');
 const app = express();
-const API_PORT = process.env.PORT || 3000;
+const API_PORT = process.env.PORT || 3001;
 
 // (optional) only made for logging and
 // bodyParser, parses the request body to be a readable json format

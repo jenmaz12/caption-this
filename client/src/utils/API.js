@@ -6,7 +6,7 @@ export default {
   // Gets images from the database
   getDataFromDb: () => {
     console.log('API');
-    return axios.get('/api/image')
+    return axios.get('/api/images')
       // .then(function (response) {
       //   console.log(response);
       //   })

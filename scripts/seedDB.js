@@ -78,6 +78,11 @@ const captionSeed = [
       'https://upload.wikimedia.org/wikipedia/commons/5/55/Faceball_Action_Shot.jpg',
     captions: [{ body: 'Add a Caption', date: new Date(Date.now()) }],
   },
+  {
+    src:
+      'https://i.swncdn.com/cdn/768w/godvine/uploads/2016/07/image_1468331839_godvine_corgi_pool_party.jpg',
+    captions: [{ body: 'Add a Caption', date: new Date(Date.now()) }],
+  },
 ];
 
 db.Data.remove({})

@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const DataSchema = new Schema({
   _id: Schema.Types.ObjectId,
   src: String,
-  captions: [{ body: String, date: Date }],
+  captions: [{ body: String, date: Date, userID: String }],
 });
 
 const Data = mongoose.model('Data', DataSchema);

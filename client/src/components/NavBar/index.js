@@ -9,27 +9,27 @@ class Nav extends Component {
     width: window.innerWidth,
   };
 
-  updateWidth = () => {
-    const newState = { width: window.innerWidth };
+  // updateWidth = () => {
+  //   const newState = { width: window.innerWidth };
 
-    if (this.state.open && newState.width > 991) {
-      newState.open = false;
-    }
+  //   if (this.state.open && newState.width > 991) {
+  //     newState.open = false;
+  //   }
 
-    this.setState(newState);
-  };
+  //   this.setState(newState);
+  // };
 
-  toggleNav = () => {
-    this.setState({ open: !this.state.open });
-  };
+  // toggleNav = () => {
+  //   this.setState({ open: !this.state.open });
+  // };
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateWidth);
-  }
+  // componentDidMount() {
+  //   window.addEventListener('resize', this.updateWidth);
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWidth);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', this.updateWidth);
+  // }
 
   render() {
     return (

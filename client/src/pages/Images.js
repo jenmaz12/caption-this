@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
-import Footer from "../components/Footer";
+import Footer from '../components/Footer';
 import ImageCards from '../components/ImageCards';
 import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
+import Nav from '../components/NavBar';
 
 class Images extends Component {
   state = {
@@ -40,9 +41,10 @@ class Images extends Component {
 
   render() {
     return (
-    <div className='container'>
-      <div className='row justify-content-center'>
-        <div className='row'>
+      <div className='container-fluid p-0'>
+        <Nav />
+        <div className='row justify-content-center'>
+          {/* <div className='row'> */}
           {this.state.results.map(image => (
             <Link to={'/images/'}>
               <ImageCards
@@ -63,10 +65,10 @@ class Images extends Component {
               value={this.state.newCaption}
             />
           ))}
+          {/* </div> */}
         </div>
         <Footer />
       </div>
-    </div>
     );
   }
 }

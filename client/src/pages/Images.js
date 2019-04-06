@@ -2,30 +2,12 @@ import React, { Component } from 'react';
 import API from '../utils/API';
 import ImageCards from '../components/ImageCards';
 import Modal from '../components/Modal';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 class Images extends Component {
   state = {
-    results: [
-      // {
-      //   _id: '2',
-      //   src: 'https://i.ytimg.com/vi/yV_wA62bbtk/maxresdefault.jpg',
-      //   captions: [{ body: 'test', date: new Date(Date.now) }],
-      // },
-      // {
-      //   _id: '3',
-      //   src:
-      //     'http://www.henspark.com/wp-content/uploads/2018/01/Success-Kid-Meme.jpg',
-      //   captions: [{ body: 'test', date: new Date(Date.now) }],
-      // },
-      // {
-      //   _id: '4',
-      //   src:
-      //     'https://i.pinimg.com/originals/98/d0/fb/98d0fbdc67201addb408ddf75e41f4a7.jpg',
-      //   captions: [{ body: 'test', date: new Date(Date.now) }],
-      // },
-    ],
+    newCaption: '',
+    results: [],
   };
 
   componentDidMount() {
@@ -42,12 +24,25 @@ class Images extends Component {
       .catch(err => console.log(err));
   };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+    // POST function
+  };
+
   render() {
     return (
       <div className='container'>
         <div className='row'>
           {this.state.results.map(image => (
-            <Link to={"/images/"}>
+            <Link to={'/images/'}>
               <ImageCards
                 key={image._id}
                 src={image.src}
@@ -57,7 +52,14 @@ class Images extends Component {
             </Link>
           ))}
           {this.state.results.map(image => (
-            <Modal src={image.src} imgID={image._id} key={image._id}/>
+            <Modal
+              src={image.src}
+              imgID={image._id}
+              key={image._id}
+              onClick={this.handleFormSubmit}
+              onChange={this.handleInputChange}
+              value={this.state.newCaption}
+            />
           ))}
         </div>
       </div>
@@ -66,6 +68,5 @@ class Images extends Component {
 }
 
 export default Images;
-
 
 // <Link to={"/images/" + image._id}>   This is the original line from the class example

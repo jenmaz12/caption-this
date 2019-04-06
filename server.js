@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const seeds = require('./scripts/seedDB');
+// Don't need this here.
 const routes = require('./routes');
 const app = express();
 const API_PORT = process.env.PORT || 3001;

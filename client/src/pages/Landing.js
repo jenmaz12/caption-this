@@ -1,42 +1,66 @@
-import React, { Component } from 'react';
-import Footer from "../components/Footer";
-import Title from '../components/Title';
-import Form from '../components/Form';
-import '../sass/colors.scss';
+import React, { Component } from "react";
+// import Footer from "../components/Footer";
+// import Title from "../components/Title";
+// import Form from "../components/Form";
+import "../sass/colors.scss";
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+
+require("dotenv").config();
+
+
+const config = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
+};
+firebase.initializeApp(config);
 
 class Home extends Component {
-  state = {
-    userName: '',
-    password: '',
+  state = { isSignedIn: false };
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
   };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user, userID: user.id });
+      sessionStorage.setItem("userID", user.uid);
+      window.location = "/images";
     });
   };
-
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+  signOut = () => {
+    firebase.auth().signOut();
+    this.setState({ isSignedIn: false });
   };
 
   render() {
     return (
-      <div className='container'>
-        <div className='row justify-content-center'>
-          <Title />
-          <Form
-            handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-            userName={this.state.userName}
-            password={this.state.password}
+      <div className="App">
+        {this.state.isSignedIn ? (
+          <span>
+            <div>Signed in!</div>
+            <button onClick={() => this.signOut()}>Sign out</button>
+          </span>
+        ) : (
+          <StyledFirebaseAuth
+            uiConfig={this.uiConfig}
+            firebaseAuth={firebase.auth()}
           />
-        </div>
-        <Footer />
+        )}
       </div>
-      
     );
   }
 }

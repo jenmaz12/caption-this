@@ -14,6 +14,15 @@
   color: $bodyTextColor;
   background-color: $lightBackground;
   height: 80vh;
+  border: 1px solid $accentColor;
+}
+
+#titleLogo {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 767px) {

@@ -1,13 +1,10 @@
 @import '../../sass/colors.scss';
 @import '../../sass/fonts.scss';
 
-.footer{
+.row{
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: $bodyFont;
     color: $bodyTextColor;
-    font-weight: initial;
-    // padding: 20%;
-
  }

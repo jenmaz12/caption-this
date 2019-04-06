@@ -44,7 +44,6 @@ class Images extends Component {
       <div className='container-fluid p-0'>
         <Nav />
         <div className='row justify-content-center'>
-          {/* <div className='row'> */}
           {this.state.results.map(image => (
             <Link to={'/images/'}>
               <ImageCards
@@ -65,7 +64,6 @@ class Images extends Component {
               value={this.state.newCaption}
             />
           ))}
-          {/* </div> */}
         </div>
         <Footer />
       </div>

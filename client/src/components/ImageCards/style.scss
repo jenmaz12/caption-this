@@ -1,11 +1,6 @@
 @import '../../sass/colors.scss';
 @import '../../sass/fonts.scss';
 
-.card-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .card {
   align-items: center;
   justify-content: center;
@@ -16,6 +11,7 @@
 }
 
 .thumbnail {
+  margin-top: 7px;
   display: flex;
   flex-direction: row;
   max-width: 100%;

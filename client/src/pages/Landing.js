@@ -3,15 +3,6 @@ import Footer from "../components/Footer";
 import Title from '../components/Title';
 import Form from '../components/Form';
 import '../sass/colors.scss';
-// import Footer from '../components/Footer';
-// import API from '../utils/API';
-// import { Col, Row, Container } from '../components/Grid';
-
-// const divStyle = {
-//   'font-family': "'Quattrocento', serif",
-//   'font-weight': 'bold',
-//   color: '#061323',
-// };
 
 class Home extends Component {
   state = {

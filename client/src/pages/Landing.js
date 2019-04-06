@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from "../components/Footer";
 import Title from '../components/Title';
 import Form from '../components/Form';
 import '../sass/colors.scss';
@@ -42,7 +43,9 @@ class Home extends Component {
             password={this.state.password}
           />
         </div>
+        <Footer />
       </div>
+      
     );
   }
 }

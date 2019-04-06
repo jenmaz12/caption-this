@@ -32,8 +32,9 @@ function Form({ userName, password, handleInputChange, handleFormSubmit }) {
                 />
               </div>
             </div>
-            <button className='btn' onClick={handleFormSubmit}>
-              Submit
+            <button 
+                  className='btn' 
+                  onClick={handleFormSubmit}>Submit
             </button>
           </form>
         </div>

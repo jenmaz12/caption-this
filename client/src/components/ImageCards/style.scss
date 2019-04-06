@@ -1,7 +1,15 @@
 @import '../../sass/colors.scss';
 @import '../../sass/fonts.scss';
 
+.card-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card {
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
   width: 280px;
   background-color: $lightBackground;
   box-shadow: 5px 5px 3px grey;

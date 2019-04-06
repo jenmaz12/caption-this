@@ -5,6 +5,6 @@ import axios from 'axios';
 export default {
   // Gets images from the database
   getBooks: function() {
-    return axios.get("/api/books");
+    return axios.get("/api/image");
   }
 };

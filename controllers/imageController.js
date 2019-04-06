@@ -2,14 +2,16 @@ const db = require('../models');
 
 module.exports = {
   findAll: function(req, res) {
-    console.log('imageController.js');
     db.Data.find(req.query)
     .then(dbImage => res.json(dbImage))
     .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
+    console.log(req.params.id);
     db.Data.findById(req.params.id)
-      .then(dbImage => res.json(dbImage))
+      .then(dbImage => {
+        console.log(dbImage)
+        res.json(dbImage)})
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {

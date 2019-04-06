@@ -84,9 +84,9 @@ db.Data.remove({})
   .then(() => db.Data.collection.insertMany(captionSeed))
   .then(data => {
     console.log(data.result.n + ' records inserted!');
-    // process.exit(0);
+    // process.exit(0);  If you uncomment it will kill the node server.
   })
   .catch(err => {
     console.error(err);
-    // process.exit(1);
+    // process.exit(1);  If you uncomment it will kill the node server.
   });

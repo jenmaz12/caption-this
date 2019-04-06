@@ -3,13 +3,13 @@ const imageController = require('../../controllers/imageController');
 
 // Matches with "/api/image"
 router
-  .route('/')
+  .route('/image')
   .get(imageController.findAll)
   .post(imageController.create);
 
 // Matches with "/api/books/:id"
 router
-  .route('/:id')
+  .route('/image/:id')
   .get(imageController.findById)
   .put(imageController.update)
   .delete(imageController.remove);

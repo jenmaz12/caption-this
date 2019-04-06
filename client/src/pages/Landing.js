@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import Footer from "../components/Footer";
-// import Title from "../components/Title";
-// import Form from "../components/Form";
+import Footer from "../components/Footer";
+import Title from "../components/Title";
+import Form from "../components/Form";
 import "../sass/colors.scss";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -47,18 +47,16 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.state.isSignedIn ? (
-          <span>
-            <div>Signed in!</div>
-            <button onClick={() => this.signOut()}>Sign out</button>
-          </span>
-        ) : (
-          <StyledFirebaseAuth
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <Title />
+          <Form
             uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
+            isSignedIn={this.state.isSignedIn}
+            signOut={this.signOut}
           />
-        )}
+        </div>
+        <Footer />
       </div>
     );
   }

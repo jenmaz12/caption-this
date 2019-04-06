@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-function Modal({ src, imgID }) {
+function Modal({ src, imgID, onClick, onChange, value }) {
   return (
     <div
       className='modal fade bd-example-modal-lg'
@@ -22,9 +22,15 @@ function Modal({ src, imgID }) {
                 id='addCaption'
                 rows='3'
                 maxLength='280'
+                name='newCaption'
+                onChange={onChange}
               />
             </div>
-            <button type='submit' className='btn btn-primary modalBtn'>
+            <button
+              onClick={onClick}
+              type='submit'
+              className='btn btn-primary modalBtn'
+            >
               Submit
             </button>
           </form>

@@ -2,10 +2,15 @@
 @import '../../sass/fonts.scss';
 
 .modalImage {
-  display: block;
+  margin-top: 7px;
+  padding: 0;
   margin: auto;
-  margin-top: 15px;
-  height: 400px;
+  // margin-left: 7px;
+  // margin-right: -7px;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .modal-content {
@@ -31,4 +36,14 @@ form {
   margin: auto;
   width: 100%;
   font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .modalImage {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    overflow: hidden;
+  }
 }

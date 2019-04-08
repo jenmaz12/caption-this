@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
 import Footer from '../components/Footer';
-import ImageCards from '../components/ImageCards';
-import Modal from '../components/Modal';
-import { Link } from 'react-router-dom';
+// import ImageCards from '../components/ImageCards';
+// import Modal from '../components/Modal';
+// import { Link } from 'react-router-dom';
 import Nav from '../components/NavBar';
 import Captions from '../components/Captions';
 

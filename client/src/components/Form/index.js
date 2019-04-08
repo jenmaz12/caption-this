@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import firebase from "firebase";
+import firebase from "../Firebase/firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 

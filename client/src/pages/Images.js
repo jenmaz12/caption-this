@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import API from "../utils/API";
-import Footer from "../components/Footer";
-import ImageCards from "../components/ImageCards";
-import Modal from "../components/Modal";
-import { Link } from "react-router-dom";
-import Nav from "../components/NavBar";
+import React, { Component } from 'react';
+import API from '../utils/API';
+import Footer from '../components/Footer';
+import ImageCards from '../components/ImageCards';
+import Modal from '../components/Modal';
+import { Link } from 'react-router-dom';
+import Nav from '../components/NavBar';
 import firebase from "firebase";
 
 class Images extends Component {
@@ -44,7 +44,6 @@ class Images extends Component {
     this.setState({ isSignedIn: false });
     window.location = "/";
   };
-
   render() {
     return (
       <div className="container-fluid p-0">
@@ -72,8 +71,9 @@ class Images extends Component {
           ))}
         </div>
         <span>
-          <button onClick={() => this.signOut()}>Sign out</button>
-        </span>
+            
+            <button onClick={() => this.signOut()}>Sign out</button>
+          </span>
         <Footer />
       </div>
     );

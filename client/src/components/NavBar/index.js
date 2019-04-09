@@ -78,6 +78,7 @@ class Nav extends Component {
               >
                 Images
               </Link>
+              
             </li>
             <li className='nav-item'>
               <Link

@@ -24,7 +24,6 @@ class Home extends Component {
   };
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
-      console.log(user);
       this.setState({
         isSignedIn: !!user, 
         userID: user.id 

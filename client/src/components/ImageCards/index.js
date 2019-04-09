@@ -4,7 +4,7 @@ import './style.scss';
 function ImageCard({ src, id, recentCaption }) {
   return (
     <a data-toggle='modal' href={'#addCaptionModal' + id}>
-      <div className='card'>
+      <div className='col justify-content-center' id = "card">
         <div className='thumbnail'>
           <img src={src} alt={id} className='cardImage' />
         </div>

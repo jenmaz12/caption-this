@@ -6,7 +6,7 @@ function Footer() {
     <footer>
       <hr />
       <p className="footer">
-        <i className="fab fa-react "/>Created by: Jennifer Mazanec, Matthew Urian, Terrell Payne, George Neuendorf.
+        <i /><span className="fab fa-react "> Created by: Jennifer Mazanec, Matthew Urian, Terrell Payne, George Neuendorf.</span>
       </p>
     </footer>
   );

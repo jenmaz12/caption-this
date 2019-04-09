@@ -9,6 +9,7 @@ class Nav extends Component {
     width: window.innerWidth,
   };
 
+  
   // updateWidth = () => {
   //   const newState = { width: window.innerWidth };
 
@@ -79,6 +80,7 @@ class Nav extends Component {
                 Images
               </Link>
             </li>
+            <button onClick={() => this.signOut()}>Sign out</button>
           </ul>
         </div>
       </nav>

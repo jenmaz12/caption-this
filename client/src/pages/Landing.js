@@ -1,23 +1,11 @@
 import React, { Component } from "react";
-// import Footer from "../components/Footer";
-// import Title from "../components/Title";
-// import Form from "../components/Form";
+import Footer from "../components/Footer";
+import Title from "../components/Title";
+import Form from "../components/Form";
 import "../sass/colors.scss";
 import firebase from "firebase";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 require("dotenv").config();
-
-
-const config = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
-};
-firebase.initializeApp(config);
 
 class Home extends Component {
   state = { isSignedIn: false };
@@ -36,7 +24,11 @@ class Home extends Component {
   };
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user, userID: user.id });
+      console.log(user);
+      this.setState({
+        isSignedIn: !!user, 
+        userID: user.id 
+      });
       sessionStorage.setItem("userID", user.uid);
       window.location = "/images";
     });
@@ -48,21 +40,19 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.state.isSignedIn ? (
-          <span>
-            <div>Signed in!</div>
-            <button onClick={() => this.signOut()}>Sign out</button>
-          </span>
-        ) : (
-          <StyledFirebaseAuth
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <Title />
+          <Form
             uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
+            isSignedIn={this.state.isSignedIn}
+            signOut={this.signOut}
           />
-        )}
+        </div>
       </div>
-    );
+    )
   }
+
 }
 
 export default Home;

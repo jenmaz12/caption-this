@@ -24,7 +24,11 @@ class Home extends Component {
   };
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user, userID: user.id });
+      console.log(user);
+      this.setState({
+        isSignedIn: !!user, 
+        userID: user.id 
+      });
       sessionStorage.setItem("userID", user.uid);
       window.location = "/images";
     });

@@ -79,6 +79,19 @@ class Nav extends Component {
                 Images
               </Link>
             </li>
+            <li className='nav-item'>
+              <Link
+                onClick={this.toggleNav}
+                className={
+                  window.location.pathname === '/sign-out'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                to='/sign-out'
+              >
+                Sign-Out
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

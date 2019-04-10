@@ -1,28 +1,23 @@
 @import '../../sass/colors.scss';
 @import '../../sass/fonts.scss';
 
-.footer{
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  clear: both;
+  background-color: $lightBackground;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: $bodyFont;
     color: $bodyTextColor;
     font-weight: initial;
+    font-size: 14px;
     // padding: 20%;
-
- }
-
-
- @media screen and (max-width: 767px) {
-    .footer{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: $bodyFont;
-        color: $bodyTextColor;
-        font-weight: initial;
-        font-size: 14px;
-        // padding: 20%;
-    
-     }
   }
+}

@@ -93,6 +93,19 @@ class Nav extends Component {
                 Sign-Out
               </Link>
             </li>
+            <li className='nav-item'>
+              <Link
+                onClick={this.props.onClick}
+                className={
+                  window.location.pathname === '/'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                to='/'
+              >
+                Sign Out
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

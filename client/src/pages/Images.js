@@ -5,12 +5,12 @@ import ImageCards from '../components/ImageCards';
 import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
 import Nav from '../components/NavBar';
-import firebase from "firebase";
+import firebase from 'firebase';
 
 class Images extends Component {
   state = {
-    newCaption: "",
-    results: []
+    newCaption: '',
+    results: [],
   };
 
   componentDidMount() {
@@ -21,7 +21,7 @@ class Images extends Component {
     API.getBooks()
       .then(res => {
         this.setState({
-          results: res.data
+          results: res.data,
         });
       })
       .catch(err => console.log(err));
@@ -30,7 +30,7 @@ class Images extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -42,15 +42,15 @@ class Images extends Component {
   signOut = () => {
     firebase.auth().signOut();
     this.setState({ isSignedIn: false });
-    window.location = "/";
+    window.location = '/';
   };
   render() {
     return (
-      <div className="container-fluid p-0">
-        <Nav />
-        <div className="row justify-content-center">
+      <div className='container-fluid p-0'>
+        <Nav onClick={this.signOut} />
+        <div className='row justify-content-center'>
           {this.state.results.map(image => (
-            <Link to={"/images/"}>
+            <Link to={'/images/'}>
               <ImageCards
                 key={image._id}
                 src={image.src}
@@ -70,10 +70,9 @@ class Images extends Component {
             />
           ))}
         </div>
-        <span>
-            
-            <button onClick={() => this.signOut()}>Sign out</button>
-          </span>
+        {/* <span>
+          <button onClick={() => this.signOut()}>Sign out</button>
+        </span> */}
         <Footer />
       </div>
     );

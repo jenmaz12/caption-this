@@ -6,6 +6,7 @@ import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
 import Nav from '../components/NavBar';
 import firebase from 'firebase';
+import Landing from './Landing';
 
 class Images extends Component {
   state = {
@@ -15,13 +16,23 @@ class Images extends Component {
 
   componentDidMount() {
     this.getImages();
+    // firebase.auth().onAuthStateChanged(user => {
+    //   console.log(user);
+    //   this.setState({
+    //     isSignedIn: !!user,
+    //     userID: user.id,
+    //   });
+    //   sessionStorage.setItem('userID', user.uid);
+    // });
   }
 
   getImages = () => {
     API.getBooks()
-      .then(res => {
+      .then(res => res.data)
+      .then(result => {
         this.setState({
-          results: res.data,
+          isLoaded: true,
+          results: result,
         });
       })
       .catch(err => console.log(err));
@@ -39,15 +50,16 @@ class Images extends Component {
     event.preventDefault();
     // POST function
   };
-  signOut = () => {
-    firebase.auth().signOut();
-    this.setState({ isSignedIn: false });
-    window.location = '/';
-  };
+  // signOut = () => {
+  //   firebase.auth().signOut();
+  //   this.setState({ isSignedIn: false });
+  //   window.location = '/';
+  // };
+
   render() {
     return (
       <div className='container-fluid p-0'>
-        <Nav onClick={this.signOut} />
+        <Nav onClick={this.props.signOut} />
         <div className='row justify-content-center'>
           {this.state.results.map(image => (
             <Link to={'/images/'}>

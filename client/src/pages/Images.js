@@ -62,14 +62,12 @@ class Images extends Component {
         <Nav onClick={this.props.signOut} />
         <div className='row justify-content-center'>
           {this.state.results.map(image => (
-            <Link to={'/images/'}>
-              <ImageCards
-                key={image._id}
-                src={image.src}
-                id={image._id}
-                recentCaption={image.captions}
-              />
-            </Link>
+            <ImageCards
+              key={image._id}
+              src={image.src}
+              id={image._id}
+              recentCaption={image.captions}
+            />
           ))}
           {this.state.results.map(image => (
             <Modal

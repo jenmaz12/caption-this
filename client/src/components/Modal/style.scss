@@ -36,6 +36,12 @@ form {
   margin: auto;
   width: 100%;
   font-size: 20px;
+  background-color: $medBlue;
+  color: $lightBackground;
+  font-weight: bold;
+  &:hover {
+    background-color: $bodyTextColor;
+  }
 }
 
 @media screen and (max-width: 767px) {

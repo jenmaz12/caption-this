@@ -6,7 +6,6 @@ import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
 import Nav from '../components/NavBar';
 import firebase from 'firebase';
-import Landing from './Landing';
 
 class Images extends Component {
   state = {
@@ -16,14 +15,6 @@ class Images extends Component {
 
   componentDidMount() {
     this.getImages();
-    // firebase.auth().onAuthStateChanged(user => {
-    //   console.log(user);
-    //   this.setState({
-    //     isSignedIn: !!user,
-    //     userID: user.id,
-    //   });
-    //   sessionStorage.setItem('userID', user.uid);
-    // });
   }
 
   getImages = () => {

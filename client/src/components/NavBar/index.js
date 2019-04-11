@@ -87,17 +87,16 @@ class Nav extends Component {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link
+              <button
                 onClick={this.props.onClick}
                 className={
                   window.location.pathname === '/'
-                    ? 'nav-link active'
-                    : 'nav-link'
+                    ? 'nav-link active btn btn-link'
+                    : 'nav-link btn btn-link'
                 }
-                to='/'
               >
                 Sign Out
-              </Link>
+              </button>
             </li>
           </ul>
         </div>

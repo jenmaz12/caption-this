@@ -9,17 +9,21 @@ import Landing from './pages/Landing';
 import Images from './pages/Images';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import firebase from '../src/components/Firebase/firebase';
+import firebase, { auth, provider } from '../src/components/Firebase/firebase';
 
 class App extends Component {
-  state = {
-    isSignedIn: false,
-    currentItem: '',
-    username: '',
-    items: [],
-    userID: '',
-    user: null, // <-- add this line
-  };
+  constructor() {
+    super();
+    this.state = {
+      isSignedIn: false,
+      currentItem: '',
+      username: '',
+      items: [],
+      userID: '',
+      user: null, // <-- add this line
+    };
+    this.signOut = this.signOut.bind(this);
+  }
 
   uiConfig = {
     signInFlow: 'popup',
@@ -59,7 +63,8 @@ class App extends Component {
           isSignedIn: false,
           userID: '',
         });
-        return <Redirect to={{ pathname: '/' }} />;
+        //     return <Redirect to={{ pathname: '/' }} />;
+        window.location = '/';
       });
   };
 

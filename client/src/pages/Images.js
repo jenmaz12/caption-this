@@ -5,12 +5,12 @@ import ImageCards from '../components/ImageCards';
 import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
 import Nav from '../components/NavBar';
-import firebase from "firebase";
+import firebase from 'firebase';
 
 class Images extends Component {
   state = {
-    newCaption: "",
-    results: []
+    newCaption: '',
+    results: [],
   };
 
   componentDidMount() {
@@ -19,9 +19,11 @@ class Images extends Component {
 
   getImages = () => {
     API.getBooks()
-      .then(res => {
+      .then(res => res.data)
+      .then(result => {
         this.setState({
-          results: res.data
+          isLoaded: true,
+          results: result,
         });
       })
       .catch(err => console.log(err));
@@ -30,7 +32,7 @@ class Images extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -39,25 +41,24 @@ class Images extends Component {
     event.preventDefault();
     // POST function
   };
-  signOut = () => {
-    firebase.auth().signOut();
-    this.setState({ isSignedIn: false });
-    window.location = "/";
-  };
+  // signOut = () => {
+  //   firebase.auth().signOut();
+  //   this.setState({ isSignedIn: false });
+  //   window.location = '/';
+  // };
+
   render() {
     return (
-      <div className="container-fluid p-0">
-        <Nav />
-        <div className="row justify-content-center">
+      <div className='container-fluid p-0'>
+        <Nav onClick={this.props.signOut} />
+        <div className='row justify-content-center'>
           {this.state.results.map(image => (
-            <Link to={"/images/"}>
-              <ImageCards
-                key={image._id}
-                src={image.src}
-                id={image._id}
-                recentCaption={image.captions}
-              />
-            </Link>
+            <ImageCards
+              key={image._id}
+              src={image.src}
+              id={image._id}
+              recentCaption={image.captions}
+            />
           ))}
           {this.state.results.map(image => (
             <Modal
@@ -70,10 +71,9 @@ class Images extends Component {
             />
           ))}
         </div>
-        <span>
-            
-            <button onClick={() => this.signOut()}>Sign out</button>
-          </span>
+        {/* <span>
+          <button onClick={() => this.signOut()}>Sign out</button>
+        </span> */}
         <Footer />
       </div>
     );

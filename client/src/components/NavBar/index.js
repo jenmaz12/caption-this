@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import logo from './logo.png';
+import firebase from 'firebase';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 
 class Nav extends Component {
   state = {
@@ -78,20 +85,18 @@ class Nav extends Component {
               >
                 Images
               </Link>
-              
             </li>
             <li className='nav-item'>
-              <Link
-                onClick={this.toggleNav}
+              <button
+                onClick={this.props.onClick}
                 className={
-                  window.location.pathname === '/sign-out'
-                    ? 'nav-link active'
-                    : 'nav-link'
+                  window.location.pathname === '/'
+                    ? 'nav-link active btn btn-link'
+                    : 'nav-link btn btn-link'
                 }
-                to='/sign-out'
               >
-                Sign-Out
-              </Link>
+                Sign Out
+              </button>
             </li>
           </ul>
         </div>

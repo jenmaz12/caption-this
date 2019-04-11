@@ -31,7 +31,7 @@ class App extends Component {
       firebase.auth.TwitterAuthProvider.PROVIDER_ID,
     ],
     callbacks: {
-      signInSuccess: () => false,
+      signInSuccessWithAuthResult: () => false,
     },
   };
 
@@ -40,9 +40,11 @@ class App extends Component {
       if (user) {
         this.setState({
           isSignedIn: !!user,
-          userID: user.id || null,
+          userID: user.id,
         });
         sessionStorage.setItem('userID', user.uid);
+        return <Redirect to={{ pathname: '/images' }} />;
+      } else {
         return <Redirect to={{ pathname: '/' }} />;
       }
     });
@@ -53,7 +55,11 @@ class App extends Component {
       .auth()
       .signOut()
       .then(() => {
-        this.setState({ isSignedIn: false, user: null });
+        this.setState({
+          isSignedIn: false,
+          userID: '',
+        });
+        return <Redirect to={{ pathname: '/' }} />;
       });
   };
 
@@ -77,7 +83,7 @@ class App extends Component {
             <Route
               exact
               path='/images'
-              component={props => (
+              render={props => (
                 <Images
                   {...props}
                   isSignedIn={this.state.isSignedIn}

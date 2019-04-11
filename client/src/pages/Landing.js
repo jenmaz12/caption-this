@@ -5,6 +5,8 @@ import Form from "../components/Form";
 import "../sass/colors.scss";
 import firebase from "firebase";
 
+
+
 require("dotenv").config();
 
 class Home extends Component {
@@ -35,6 +37,7 @@ class Home extends Component {
   signOut = () => {
     firebase.auth().signOut();
     this.setState({ isSignedIn: false });
+   
   };
 
   render() {

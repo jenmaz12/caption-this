@@ -1,16 +1,21 @@
 @import '../../sass/colors.scss';
 @import '../../sass/fonts.scss';
 
-.card {
+#card {
   align-items: center;
   justify-content: center;
   margin: 6px;
   width: 280px;
   background-color: $lightBackground;
   box-shadow: 5px 5px 3px grey;
+  text-align: center;
 }
-
+.row{
+  margin: 0;
+}
 .thumbnail {
+  align-items: center;
+  justify-content: center;
   margin-top: 7px;
   display: flex;
   flex-direction: row;
@@ -19,6 +24,7 @@
 }
 
 .thumbnail .cardImage {
+  margin-top: 5px;
   max-height: 150px;
 }
 
@@ -28,4 +34,16 @@
   color: $bodyTextColor;
   font-size: 1.5em;
   font-weight: bold;
+}
+
+
+@media screen and (max-width: 767px) {
+  #card {
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    width: 280px;
+    background-color: $lightBackground;
+    box-shadow: 3px 3px 1px grey;
+  }
 }

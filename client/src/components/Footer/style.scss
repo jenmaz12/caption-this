@@ -11,3 +11,18 @@
     // padding: 20%;
 
  }
+
+
+ @media screen and (max-width: 767px) {
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $bodyFont;
+        color: $bodyTextColor;
+        font-weight: initial;
+        font-size: 14px;
+        // padding: 20%;
+    
+     }
+  }

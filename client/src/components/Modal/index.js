@@ -30,6 +30,7 @@ function Modal({ src, imgID, onClick, onChange, value }) {
               onClick={onClick}
               type='submit'
               className='btn btn-primary modalBtn'
+              data-imgid={imgID}
             >
               Submit
             </button>

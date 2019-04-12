@@ -3,9 +3,9 @@ import API from '../utils/API';
 import Footer from '../components/Footer';
 import ImageCards from '../components/ImageCards';
 import Modal from '../components/Modal';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Nav from '../components/NavBar';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 class Images extends Component {
   state = {
@@ -18,7 +18,7 @@ class Images extends Component {
   }
 
   getImages = () => {
-    API.getBooks()
+    API.getImages()
       .then(res => res.data)
       .then(result => {
         this.setState({
@@ -40,6 +40,28 @@ class Images extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     // POST function
+    
+    const currentImage = event.target.dataset.imgid;
+    const currentCaptions = [];
+
+    API.getCaption(currentImage)
+      .then(res => res.data)
+      .then(result => {
+        currentCaptions.push(result.captions)
+      })
+
+    const addedCaption = {
+      body:this.state.newCaption,
+      date: new Date(Date.now())};
+
+    currentCaptions.push(addedCaption);
+    console.log(currentCaptions);
+
+    API.savedCaption(currentImage, { captions: currentCaptions })
+      .then(res => res.data)
+      .then(result => {
+        console.log("imgID" + currentImage);
+      })
   };
   // signOut = () => {
   //   firebase.auth().signOut();

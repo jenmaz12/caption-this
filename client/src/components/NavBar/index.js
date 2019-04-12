@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import logo from './logo.png';
-import firebase from 'firebase';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+// import firebase from 'firebase';
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Switch,
+//   Redirect,
+// } from 'react-router-dom';
 
 class Nav extends Component {
   state = {

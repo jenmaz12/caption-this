@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Title from '../components/Title';
 import Form from '../components/Form';
 import '../sass/colors.scss';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 require('dotenv').config();
 

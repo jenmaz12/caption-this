@@ -4,15 +4,15 @@ import axios from 'axios';
 
 export default {
   // Gets images from the database
-  getBooks: function() {
+  getImages: function() {
     return axios.get("/api/image");
   },
   
   getCaption: function(id) {
-    return axios.get("/api/image" + id);
+    return axios.get("/api/image/" + id);
   },
    
-  savedCaption: function(savedCaption, _id) {
-    return axios.post("/api/images", savedCaption + _id);
+  savedCaption: function(_id, savedCaption) {
+    return axios.put("/api/image/" + _id, savedCaption);
   }
 };

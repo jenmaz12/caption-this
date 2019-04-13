@@ -9,7 +9,7 @@ import Landing from './pages/Landing';
 import Images from './pages/Images';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import firebase, { auth, provider } from '../src/components/Firebase/firebase';
+import firebase from '../src/components/Firebase/firebase';
 
 class App extends Component {
   constructor() {

@@ -62,6 +62,8 @@ class Images extends Component {
           .then(result => {
             console.log('imgID' + currentImage);
           });
+        document.getElementById('form' + currentImage).reset();
+        window.location = '/images';
       });
   };
   // signOut = () => {
@@ -97,7 +99,6 @@ class Images extends Component {
         {/* <span>
           <button onClick={() => this.signOut()}>Sign out</button>
         </span> */}
-        <Footer />
       </div>
     );
   }

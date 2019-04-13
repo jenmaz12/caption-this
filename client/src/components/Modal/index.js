@@ -14,7 +14,7 @@ function Modal({ src, imgID, onClick, onChange, value }) {
       <div className='modal-dialog modal-lg modal-dialog-centered'>
         <div className='modal-content'>
           <img className='modalImage img-responsive' src={src} alt={imgID} />
-          <form>
+          <form id={'form' + imgID}>
             <div className='form-group'>
               <label htmlFor='addCaption'>Add a Caption to this Image!</label>
               <textarea

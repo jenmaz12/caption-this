@@ -29,7 +29,7 @@ function Modal({ src, imgID, onClick, onChange, value }) {
             <button
               onClick={onClick}
               type='submit'
-              className='btn btn-primary modalBtn'
+              className='btn btn-primary modalBtn animated delay- 2s jello'
               data-imgid={imgID}
             >
               Submit

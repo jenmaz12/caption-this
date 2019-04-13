@@ -40,28 +40,29 @@ class Images extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     // POST function
-    
+
     const currentImage = event.target.dataset.imgid;
     const currentCaptions = [];
-
+    const addedCaption = {
+      body: this.state.newCaption,
+      date: new Date(Date.now()),
+    };
+    console.log(currentImage);
     API.getCaption(currentImage)
       .then(res => res.data)
       .then(result => {
-        currentCaptions.push(result.captions)
-      })
-
-    const addedCaption = {
-      body:this.state.newCaption,
-      date: new Date(Date.now())};
-
-    currentCaptions.push(addedCaption);
-    console.log(currentCaptions);
-
-    API.savedCaption(currentImage, { captions: currentCaptions })
-      .then(res => res.data)
-      .then(result => {
-        console.log("imgID" + currentImage);
-      })
+        console.log(result);
+        for (let i = 0; i < result.captions.length; i++) {
+          currentCaptions.push(result.captions[i]);
+        }
+        currentCaptions.push(addedCaption);
+        console.log(currentCaptions);
+        API.savedCaption(currentImage, { captions: currentCaptions })
+          .then(res => res.data)
+          .then(result => {
+            console.log('imgID' + currentImage);
+          });
+      });
   };
   // signOut = () => {
   //   firebase.auth().signOut();

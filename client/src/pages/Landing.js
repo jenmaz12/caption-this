@@ -8,35 +8,6 @@ import '../sass/colors.scss';
 require('dotenv').config();
 
 class Landing extends Component {
-  // state = { isSignedIn: false };
-  // uiConfig = {
-  //   signInFlow: 'popup',
-  //   signInOptions: [
-  //     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-  //     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-  //     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  //     firebase.auth.GithubAuthProvider.PROVIDER_ID,
-  //     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-  //   ],
-  //   callbacks: {
-  //     signInSuccess: () => false,
-  //   },
-  // };
-  // componentDidMount = () => {
-  //   firebase.auth().onAuthStateChanged(user => {
-  //     console.log(user);
-  //     this.setState({
-  //       isSignedIn: !!user,
-  //       userID: user.id,
-  //     });
-  //     sessionStorage.setItem('userID', user.uid);
-  //   });
-  // };
-
-  // signOut = () => {
-  //   firebase.auth().signOut();
-  //   this.setState({ isSignedIn: false });
-  // };
   render() {
     return (
       <div className='container'>

@@ -10,7 +10,7 @@
   box-shadow: 5px 5px 3px grey;
   text-align: center;
 }
-.row{
+.row {
   margin: 0;
 }
 .thumbnail {
@@ -32,10 +32,9 @@
   text-decoration: none;
   font-family: $bodyFont;
   color: $bodyTextColor;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
 }
-
 
 @media screen and (max-width: 767px) {
   #card {

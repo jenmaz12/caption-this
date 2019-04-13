@@ -2,11 +2,18 @@
 @import '../../sass/fonts.scss';
 
 footer {
-  position: fixed;
-  bottom: 0;
+  // position: fixed;
+  // bottom: 0;
   width: 100%;
   clear: both;
   text-align: center;
+  background-color: $lightBackground;
+  margin-bottom: 0;
+}
+
+.footer {
+  margin-bottom: 0;
+  padding-bottom: 20px;
 }
 
 @media screen and (max-width: 767px) {

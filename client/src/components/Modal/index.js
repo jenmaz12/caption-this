@@ -21,7 +21,7 @@ function Modal({ src, imgID, onClick, onChange, value }) {
                 className='form-control'
                 id='addCaption'
                 rows='3'
-                maxLength='280'
+                maxLength='60'
                 name='newCaption'
                 onChange={onChange}
               />

@@ -2,8 +2,8 @@
 @import '../../sass/fonts.scss';
 
 footer {
-  // position: fixed;
-  // bottom: 0;
+  position: relative;
+  bottom: 0;
   width: 100%;
   clear: both;
   text-align: center;
@@ -26,5 +26,10 @@ footer {
     font-weight: initial;
     font-size: 14px;
     // padding: 20%;
+  }
+}
+@media screen and (max-width: 425px) {
+  #main {
+    margin-bottom: 40px;
   }
 }

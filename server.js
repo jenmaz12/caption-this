@@ -6,7 +6,7 @@ const seeds = require('./scripts/seedDB');
 // Don't need this here.
 const routes = require('./routes');
 const app = express();
-const API_PORT = process.env.PORT || 3001;
+const API_PORT = process.env.PORT || 80;
 
 // (optional) only made for logging and
 // bodyParser, parses the request body to be a readable json format

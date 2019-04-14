@@ -60,7 +60,7 @@ class Nav extends Component {
           id='navbarNav'
         >
           <ul className='navbar-nav'>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 onClick={this.toggleNav}
                 className={
@@ -72,7 +72,7 @@ class Nav extends Component {
               >
                 Home
               </Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link
                 onClick={this.toggleNav}

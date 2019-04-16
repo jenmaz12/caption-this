@@ -7,7 +7,7 @@ const config = {
     databaseURL: "captionthis-auth.firebaseapp.com",
     projectId: "https://pixafinder.firebaseio.com",
     storageBucket: "pixafinder",
-    messagingSenderId: 4532345391321
+    messagingSenderId: "4532345391321"
   };
 
 firebase.initializeApp(config);

@@ -9,6 +9,7 @@
   background-color: $lightBackground;
   box-shadow: 5px 5px 3px grey;
   text-align: center;
+  // background:  0 0 no-repeat;
 }
 
 #card:hover {
@@ -16,6 +17,7 @@
   -webkit-transform: scale(0.9); /* Safari 3-8 */
   transform: scale(0.9);
   border: 1px solid $accentColor !important;
+  background-position: 0 -40px;
 }
 
 .row {
